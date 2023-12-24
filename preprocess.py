@@ -5,6 +5,9 @@ import numpy as np
 from tensorflow import keras
 
 
+MODEL_PATH = "model.h5"
+
+
 KERN_DATASET_PATH = 'deutschl/erk'
 SAVE_DIR = "dataset"
 SINGLE_FILE_DATASET = "file_dataset"
@@ -196,6 +199,7 @@ def main():
     create_mapping(songs, MAPPING_PATH)
     inputs, targets = generate_training_sequences(SEQUENCE_LENGTH)
     print(len(targets))
+
 
 if __name__ == "__main__":
     main()

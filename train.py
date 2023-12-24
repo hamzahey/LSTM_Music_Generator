@@ -5,9 +5,11 @@ OUTPUT_UNITS = 38
 NUM_UNITS = [256]
 LOSS = "sparse_categorical_crossentropy"
 LEARNING_RATE = 0.001
-EPOCHS = 5
+EPOCHS = 10
 BATCH_SIZE = 64
 SAVE_MODEL_PATH = "model.h5"
+
+
 
 
 def build_model(output_units, num_units, loss, learning_rate):
@@ -38,11 +40,19 @@ def train(output_units=OUTPUT_UNITS, num_units=NUM_UNITS, loss=LOSS, learning_ra
     # generate the training sequences
     inputs, targets = generate_training_sequences(SEQUENCE_LENGTH)
 
-    # build the network
+    # Evaluate the model on test sequences
+    
+
+    # # build the network
     model = build_model(output_units, num_units, loss, learning_rate)
 
-    # train the model
+    # # train the model
     model.fit(inputs, targets, epochs=EPOCHS, batch_size=BATCH_SIZE)
+
+
+    loss, accuracy = model.evaluate(inputs, targets)
+    print(f"Test Loss: {loss}")
+    print(f"Test Accuracy: {accuracy}")
 
     # save the model
     model.save(SAVE_MODEL_PATH)

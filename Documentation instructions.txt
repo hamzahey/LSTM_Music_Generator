@@ -1,0 +1,7 @@
+1- Introduction
+2- Literature Review (Optional)
+3- Methodology (Explain all the methods, have a flowchart, Explaining different processes -e.g- Data preprocessing, Model Selection, Model Evaluation, Testing, Output)
+4- Results and Explanation
+5- Conclusion
+
+Make sure to add all failure points, with explanation and mention all the references if any
